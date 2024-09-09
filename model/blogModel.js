@@ -4,13 +4,12 @@ const Schema = mongoose.Schema   //class
 const blogSchema = new Schema({     //making column
     title : {
         type: String, //in title only string can be stored
-        unique : True
     },
     subtitle : {
         type : String
     },
     description :{
-        type : Text // can store larger text than string
+        type : String
     },
     image : {
         type : String
