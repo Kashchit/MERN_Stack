@@ -3,6 +3,9 @@ const express = require('express')
 const app = express()
 const connectToDatabase = require('./database/index')
 
+//middleware
+app.use(express.json())   //node will understand json
+
 connectToDatabase()
 
 app.get('/',(req,res)=>{
@@ -11,11 +14,13 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.get('/about',(req,res)=>{
-    res.json({
-        message: "Welcome to the about page"
+app.post("/blog", (req,res)=>{
+    console.log(req.body)
+    res.status(200).json({
+        message:"Blog created"
     })
 })
+
 
 app.listen(process.env.PORT,()=>{
     console.log("Server has started")
