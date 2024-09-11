@@ -4,6 +4,7 @@ const Schema = mongoose.Schema   //class
 const blogSchema = new Schema({     //making column
     title : {
         type: String, //in title only string can be stored
+        unique: true
     },
     subtitle : {
         type : String
